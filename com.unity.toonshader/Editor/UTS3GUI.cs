@@ -382,8 +382,8 @@ namespace UnityEditor.Rendering.Toon
         protected MaterialProperty set_1st_ShadePosition = null;
         protected MaterialProperty set_2nd_ShadePosition = null;
         protected MaterialProperty shadingGradeMap = null;
-
-
+       
+        protected MaterialProperty baseTextureColor = null;
 
         protected MaterialProperty highColor_Tex = null;
         protected MaterialProperty highColor = null;
@@ -477,6 +477,7 @@ namespace UnityEditor.Rendering.Toon
             set_2nd_ShadePosition = FindProperty(ShaderProp_Set_2nd_ShadePosition, props, false);
             shadingGradeMap = FindProperty(ShaderProp_ShadingGradeMap, props, false);
 
+            baseTextureColor = FindProperty("_BaseTextureColor", props);
 
             highColor_Tex = FindProperty(ShaderProp_HighColor_Tex, props);
             highColor = FindProperty("_HighColor", props);
@@ -1375,7 +1376,10 @@ namespace UnityEditor.Rendering.Toon
 
         void GUI_BasicThreeColors(Material material)
         {
-
+            
+            EditorGUI.indentLevel += 2;
+            m_MaterialEditor.ColorProperty( baseTextureColor, "The underlying texture color.");
+            EditorGUI.indentLevel -= 2;
 
             m_MaterialEditor.TexturePropertySingleLine(Styles.baseColorText, mainTex, baseColor);
             //v.2.0.7 Synchronize _Color to _BaseColor.

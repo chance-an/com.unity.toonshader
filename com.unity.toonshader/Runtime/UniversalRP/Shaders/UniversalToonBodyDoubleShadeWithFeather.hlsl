@@ -84,6 +84,7 @@
                 half3 mainLightColor = GetLightColor(mainLight);
                 float4 _MainTex_var = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, TRANSFORM_TEX(Set_UV0, _MainTex));
 
+                _MainTex_var = lerp(_BaseTextureColor, _MainTex_var, _MainTex_var.a);
 //v.2.0.4
 #if defined(_IS_CLIPPING_MODE) 
 //DoubleShadeWithFeather_Clipping

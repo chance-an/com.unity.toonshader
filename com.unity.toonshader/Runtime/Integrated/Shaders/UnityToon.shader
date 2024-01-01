@@ -48,6 +48,7 @@ Shader "Toon" {
 
 
 
+        _BaseTextureColor ("BaseTextureColor", Color) = (0.5,0.5,0.5,1)
 
 
         _MainTex ("BaseMap", 2D) = "white" {}

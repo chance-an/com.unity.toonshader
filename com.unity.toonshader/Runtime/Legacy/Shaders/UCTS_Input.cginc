@@ -184,6 +184,9 @@ half _Surface;
 // sampler2D _2nd_ShadeMap;
 // sampler2D _NormalMap;
 
+half4 _BaseTextureColor;
+
+
 Texture2D _MainTex; SamplerState sampler_MainTex;
 Texture2D _1st_ShadeMap;
 Texture2D _2nd_ShadeMap;

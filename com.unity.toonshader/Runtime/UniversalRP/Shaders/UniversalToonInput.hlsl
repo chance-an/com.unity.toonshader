@@ -192,6 +192,9 @@ CBUFFER_END
 //sampler2D _2nd_ShadeMap;
 //sampler2D _NormalMap;
 
+half4 _BaseTextureColor;
+
+
 TEXTURE2D(_MainTex); SAMPLER(sampler_MainTex);
 TEXTURE2D(_1st_ShadeMap);
 TEXTURE2D(_2nd_ShadeMap);
